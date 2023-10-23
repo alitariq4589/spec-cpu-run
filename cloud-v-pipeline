@@ -1,0 +1,318 @@
+node("sf1-1"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("sf1-2"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("sf1-3"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("sf2-1"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("sf2-2"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("sf2-3"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("sf2-4"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("sf2-5"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("unleashed1-1"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("rasp4-1"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
+
+node("dell5559"){
+    stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
+        sh'''#!/bin/bash
+            rm ~/spec-cpu-2017_riscv_compiled/result/*
+        '''
+    }
+    stage("Run Benchmark"){
+        sh'''#!/bin/bash
+            cd ~/spec-cpu-2017_riscv_compiled
+            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+        '''
+    }
+    stage("Printing Results"){
+        sh'''#!/bin/bash
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' # For floaing point tests
+        '''
+    }
+    stage("Append Results to File"){
+        sh'''#!/bin/bash
+            echo -n \$BUILD_NUMBER >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.intrate.refrate.txt | grep 'SPECrate(R)2017_int_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For integer tests
+            cat ~/spec-cpu-2017_riscv_compiled/result/CPU2017.001.fprate.refrate.txt | grep 'SPECrate(R)2017_fp_base' | awk '{print $3}' >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv \ # For floaing point tests
+            echo $(gcc --version | head -n 1 | awk '{print $4}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv; \
+            echo $(uname -a | awk '{print $3}') >> ~/spec-cpu-specrate-results/result_\$HOSTNAME.csv
+        '''
+    }
+}
