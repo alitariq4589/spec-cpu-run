@@ -7,7 +7,7 @@ node("sf1-1"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/spec-cpu-2017_riscv_compiled/config specrate --reportable
+            ./bin/runcpu --config=~/spec-cpu-2017_riscv_compiled/config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
