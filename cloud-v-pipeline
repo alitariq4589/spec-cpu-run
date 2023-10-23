@@ -1,7 +1,7 @@
 node("sf1-1"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            "rm ~/spec-cpu-2017_riscv_compiled/result/*"
         '''
     }
     stage("Run Benchmark"){
