@@ -7,7 +7,7 @@ node("sf1-1"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -32,7 +32,7 @@ node("sf1-2"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -57,7 +57,7 @@ node("sf1-3"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -82,7 +82,7 @@ node("sf2-1"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -107,7 +107,7 @@ node("sf2-2"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -132,7 +132,7 @@ node("sf2-3"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -157,7 +157,7 @@ node("sf2-4"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -182,7 +182,7 @@ node("sf2-5"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -207,7 +207,7 @@ node("unleashed1-1"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -232,7 +232,7 @@ node("rasp4-1"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
@@ -257,7 +257,7 @@ node("dell5559"){
     stage("Run Benchmark"){
         sh'''#!/bin/bash
             cd ~/spec-cpu-2017_riscv_compiled
-            ./bin/runcpu --config=~/gcc-linux-visionfive1.cfg specrate --reportable
+            ./bin/runcpu --config=.config/gcc-linux-visionfive1.cfg specrate --reportable
         '''
     }
     stage("Printing Results"){
