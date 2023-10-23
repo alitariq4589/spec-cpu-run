@@ -1,7 +1,7 @@
 node("sf1-1"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            "rm -f ~/spec-cpu-2017_riscv_compiled/result/*" || true
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -26,7 +26,7 @@ node("sf1-1"){
 node("sf1-2"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -51,7 +51,7 @@ node("sf1-2"){
 node("sf1-3"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -76,7 +76,7 @@ node("sf1-3"){
 node("sf2-1"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -101,7 +101,7 @@ node("sf2-1"){
 node("sf2-2"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -126,7 +126,7 @@ node("sf2-2"){
 node("sf2-3"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -151,7 +151,7 @@ node("sf2-3"){
 node("sf2-4"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -176,7 +176,7 @@ node("sf2-4"){
 node("sf2-5"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -201,7 +201,7 @@ node("sf2-5"){
 node("unleashed1-1"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -226,7 +226,7 @@ node("unleashed1-1"){
 node("rasp4-1"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
@@ -251,7 +251,7 @@ node("rasp4-1"){
 node("dell5559"){
     stage("Cleanup"){ // This stage cleans up any previous reports in 'result' directory
         sh'''#!/bin/bash
-            rm ~/spec-cpu-2017_riscv_compiled/result/*
+            rm -f ~/spec-cpu-2017_riscv_compiled/result/* || true
         '''
     }
     stage("Run Benchmark"){
